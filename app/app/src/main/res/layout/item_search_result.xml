@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/result_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="6dp"
+    android:layout_marginEnd="6dp"
+    android:layout_marginStart="6dp"
+    android:layout_marginTop="6dp"
+    android:background="@color/md_white_1000"
+    android:foreground="?attr/selectableItemBackground"
+    card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+    card_view:cardElevation="@dimen/card_recycler_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/text_margin"
+            android:layout_marginStart="2dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/imageCard"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:elevation="12dp"
+                android:ellipsize="end"
+                android:innerRadius="0dp"
+                android:maxLines="1"
+                android:shape="ring"
+                android:textSize="16sp"
+                android:thicknessRatio="1.9"
+                app:cardCornerRadius="20dp">
+                <ImageView
+                    android:id="@+id/iv_result_item"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:transitionName="tImage" />
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="19dp"
+                android:layout_toEndOf="@+id/imageCard"
+                android:layout_toStartOf="@+id/result_score"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/result_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/md_black_1000"
+                    android:textSize="16sp"
+                    android:transitionName="tName" />
+
+                <TextView
+                    android:id="@+id/result_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/md_grey_500"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/result_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:textColor="@color/md_black_1000" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/result_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:text="TextView" />
+
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lv_result_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
